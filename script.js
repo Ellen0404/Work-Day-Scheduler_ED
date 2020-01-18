@@ -3,7 +3,7 @@ var calendarData = [];
 $("#currentDay").text(moment().format('LL'));
 
 var arrTime =["9-AM","10-AM","11-AM","12-PM","1-PM","2-PM","3-PM","4-PM","5-PM","6-PM"];
-var arrMilTime =[9,10,11,12,13,14,15,16,17,18];
+var arrMilTime =[9,10,11,12,13,21,22,23,24,25];
 var currentHour = moment().format('LT');
 
 for (i=0;i<arrTime.length;i++){
