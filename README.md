@@ -7,6 +7,9 @@ Put the events you're planning to attend or any errands you want to make and cki
 You can now close the application and continie with your day.<br>
 Next time you open your Work-Day-Scheduler your saved events will be there , so you can track your events anytime!<br>
 <img src = "./assets/17-01-2020 21-52-13.jpg" width = 300px><br>
-Have all your events organized with this light and easy application!
+Have all your events organized with this light and easy application!<br>
+
+PS. Here is a link to the deployed GitHub Pages<br>
+<a href ="https://ellen0404.github.io/Work-Day-Scheduler_ED/">Link to my Work-Day-Scheduler</a>
 
 

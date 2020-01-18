@@ -3,7 +3,7 @@ var calendarData = [];
 $("#currentDay").text(moment().format('LL'));
 
 var arrTime =["9-AM","10-AM","11-AM","12-PM","1-PM","2-PM","3-PM","4-PM","5-PM","6-PM"];
-var arrMilTime =[9,10,11,12,13,21,22,23,24,25];
+var arrMilTime =[9,10,11,12,13,14,15,16,17,18];
 var currentHour = moment().format('LT');
 
 for (i=0;i<arrTime.length;i++){
@@ -11,7 +11,6 @@ for (i=0;i<arrTime.length;i++){
     var tableRow =$("<tr>");
  
     //time data Time
-  
     var tableDataTime = $("<td>");
     tableDataTime.addClass("hour");
     tableDataTime.text(arrTime[i]);
@@ -25,7 +24,7 @@ for (i=0;i<arrTime.length;i++){
 
     tableDataEvent.append(dataInput);
    
-    // check current hour function
+    // check current hour 
     var currentDayTime =parseInt(moment().format("HH") );
     if (currentDayTime === arrMilTime[i] ){
       dataInput.addClass("present");
@@ -35,7 +34,7 @@ for (i=0;i<arrTime.length;i++){
      dataInput.addClass("future");
      }
 
-    // button data button
+    // button data
     var tableDataBtn =$("<td>");
     var saveBtn = $("<button>");
     var btnImage = $("<img>");
@@ -46,27 +45,22 @@ for (i=0;i<arrTime.length;i++){
     saveBtn.addClass("saveBtn time-block");
     tableDataBtn.append(saveBtn);
 
-   // append dinamic elements to the html
+   // append dynamic elements to the html
    tableRow.append(tableDataTime,tableDataEvent,tableDataBtn);
     $("#tableRows").append(tableRow);
 }
 
 // save to local storage 
-
 $('.saveBtn').on("click", function(){
-
-console.log($(this).data('eventid'));
  var valueID = $(this).data('eventid');
  var scheduledEvent =$("#"+valueID).val();
- console.log(calendarData,valueID,scheduledEvent);
- calendarData.push({valueID,scheduledEvent});
+
+calendarData.push({valueID,scheduledEvent});
 localStorage.setItem("calendarData", JSON.stringify(calendarData));
 });
 
 function renderEvent (value){
    if( value){
-    // console.log(value.valueID);
-    // console.log(value.scheduledEvent);
     $("#"+value.valueID).text(value.scheduledEvent);
    }
 }
@@ -76,8 +70,7 @@ $(document).ready(function(){
     if (calendarData === null){
         calendarData = [];
     }
-    // calendarData.forEach(renderEvent);
-    for (x=0; x<calendarData.length; x++){
+      for (x=0; x<calendarData.length; x++){
         renderEvent(calendarData[x]);
     }
      
